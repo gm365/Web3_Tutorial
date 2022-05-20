@@ -9,6 +9,7 @@ Web3科学家极简入门指南
 
 1. 安装 Python3
 2. 安装 web3.py 库 `pip install web3`
+3. 申请 Infura API Key: https://infura.io/
 
 
 ## 01: 读取链上信息
