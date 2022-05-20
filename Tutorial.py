@@ -13,6 +13,8 @@ def get_w3_by_network(network='mainnet'):
 
 
 def main():
+    
+    # 🐳 Task 1: 接入并读取区块链信息
 
     # 接入 Web3
     w3 = get_w3_by_network(network='mainnet')
