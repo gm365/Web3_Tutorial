@@ -2,14 +2,14 @@
 Web3科学家极简入门指南 示例代码
 
 
-## 读取链上信息
+## 01: 读取链上信息
 
 * 目标：通过 Infura 接入以太坊主网并查询钱包余额信息
 * 代码： https://github.com/gm365/Web3_Tutorial/blob/main/Tutorial.py
 
 
 
-## Rinkeby 测试网转账 ETH
+## 02: Rinkeby 测试网转账 ETH
 
 * 目标：接入 Rinkeby 测试网并完成一笔转账交易
 
