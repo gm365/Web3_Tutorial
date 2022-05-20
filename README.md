@@ -28,3 +28,11 @@ Web3科学家极简入门指南 示例代码
 
 * 代码： https://github.com/gm365/Web3_Tutorial/blob/main/ArbitrumBridge.py
 * 交互记录 Hash： https://rinkeby.etherscan.io/tx/0x417f85a41d70ee619d9ff2c17051ed8ac56205e1ac232dd10966cd4b8dccdb43
+
+
+## 04: zkSync 测试网跨链桥交互
+
+* 目标： 完成 zkSync 测试网的跨链桥存入 ETH 交互
+
+* 代码： https://github.com/gm365/Web3_Tutorial/blob/main/zkSyncBridge.py
+* 交互记录 Hash： https://goerli.etherscan.io/tx/0x4dbe6b9e52c3c401d80d5d585a03d0850d999c67a9aedbe54a23400d6b906005
