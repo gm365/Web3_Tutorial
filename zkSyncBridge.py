@@ -67,7 +67,7 @@ def main():
     contract_address = '0x0e9B63A28d26180DBf40E8c579af3aBf98aE05C5'
 
     # 跨链 ETH 金额
-    amount_in_ether = 0.088
+    amount_in_ether = 0.0188
 
     # goerli Testnet ChainID
     chainId = 5
