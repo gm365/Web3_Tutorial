@@ -28,10 +28,13 @@ def bridge_arbitrum_eth(w3, from_address, private_key, contract_address, amount_
     params = {
         'chainId': chainId,
         'gas': 250000,
-        'gasPrice': w3.toWei('5', 'gwei'),
         'nonce': nonce,
         'from': from_address,
         'value': amount_in_wei,
+        # 'gasPrice': w3.toWei('5', 'gwei'),
+        'maxFeePerGas': w3.toWei(5, 'gwei'),
+        'maxPriorityFeePerGas': w3.toWei(5, 'gwei'),
+        'chainId': chainId,
     }
     contract = w3.eth.contract(address=contract_address, abi=ABI)
 
