@@ -39,7 +39,7 @@ def bridge_zkSync_eth(w3, from_address, private_key, contract_address, amount_in
         # 'chainId': chainId,
     }
 
-    contract = w3.eth.contract(address=contract, abi=ABI)
+    contract = w3.eth.contract(address=contract_address, abi=ABI)
 
     try:
         raw_txn = contract.functions.depositETH(amount_in_wei, from_address, 0, 0).buildTransaction(tx_params)
