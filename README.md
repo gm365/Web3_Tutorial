@@ -46,3 +46,9 @@ Web3科学家极简入门指南
 
 * 代码： https://github.com/gm365/Web3_Tutorial/blob/main/zkSyncBridge.py
 * 交互记录 Hash： https://goerli.etherscan.io/tx/0x4dbe6b9e52c3c401d80d5d585a03d0850d999c67a9aedbe54a23400d6b906005
+
+
+
+## 参考资源
+
+* Twitter 帖子地址： https://twitter.com/gm365/status/1527487356198330368
