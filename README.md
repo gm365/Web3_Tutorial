@@ -51,4 +51,5 @@ Web3科学家极简入门指南
 
 ## 参考资源
 
+* Mirror 版： https://mirror.xyz/gm365.eth/ad4vbp_qLFKaOrAMtE2YZ6pzMuC3ejam-y_62QogSds
 * Twitter 帖子地址： https://twitter.com/gm365/status/1527487356198330368
