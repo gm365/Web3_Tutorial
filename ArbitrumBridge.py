@@ -16,14 +16,14 @@ def get_w3_by_network(network='mainnet'):
 
 # bridge eth from rinkeby to arbitrum testnet
 def bridge_arbitrum_eth(w3, from_address, private_key, contract_address, amount_in_ether, chainId):
-    from_address = Web3.toChecksumAddress(from_address)
-    contract_address = Web3.toChecksumAddress(contract_address)
+    from_address = Web3.to_checksum_address(from_address)
+    contract_address = Web3.to_checksum_address(contract_address)
 
     ABI = '[{"inputs":[{"internalType":"uint256","name":"maxSubmissionCost","type":"uint256"}],"name":"depositEth","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"payable","type":"function"}]'
     
     amount_in_wei = w3.toWei(amount_in_ether, 'ether')
     maxSubmissionCost = int(amount_in_wei * 0.01) # 定义参数值
-    nonce = w3.eth.getTransactionCount(from_address)
+    nonce = w3.eth.get_transaction_count(from_address)
 
     params = {
         'chainId': chainId,
@@ -43,7 +43,7 @@ def bridge_arbitrum_eth(w3, from_address, private_key, contract_address, amount_
     try:
         tx = func.buildTransaction(params)
         signed_tx = w3.eth.account.sign_transaction(tx, private_key=private_key)
-        txn = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
+        txn = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
         return {'status': 'succeed', 'txn_hash': w3.toHex(txn), 'task': 'Bridge ETH'}
     except Exception as e:
         return {'status': 'failed', 'error': e, 'task': 'Bridge ETH'}
