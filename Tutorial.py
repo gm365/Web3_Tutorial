@@ -20,7 +20,7 @@ def main():
     w3 = get_w3_by_network(network='mainnet')
 
     # 检查接入状态
-    print(w3.isConnected())
+    print(w3.is_connected())
 
     # 当前区块高度
     print(w3.eth.block_number)
@@ -29,7 +29,7 @@ def main():
     vb = '0x220866b1a2219f40e72f5c628b65d54268ca3a9d'
 
     # 地址格式转换
-    address = Web3.toChecksumAddress(vb)
+    address = Web3.to_checksum_address(vb)
 
     # 查询地址 ETH余额
     balance = w3.eth.get_balance(address) / 1e18

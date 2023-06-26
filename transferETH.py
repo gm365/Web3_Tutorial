@@ -14,24 +14,24 @@ def get_w3_by_network(network='mainnet'):
 
 
 def transfer_eth(w3,from_address,private_key,target_address,amount,gas_price=5,gas_limit=21000,chainId=4):
-    from_address = Web3.toChecksumAddress(from_address)
-    target_address = Web3.toChecksumAddress(target_address)
-    nonce = w3.eth.getTransactionCount(from_address) # 获取 nonce 值
+    from_address = Web3.to_checksum_address(from_address)
+    target_address = Web3.to_checksum_address(target_address)
+    nonce = w3.eth.get_transaction_count(from_address) # 获取 nonce 值
     params = {
         'from': from_address,
         'nonce': nonce,
         'to': target_address,
-        'value': w3.toWei(amount, 'ether'),
+        'value': w3.to_wei(amount, 'ether'),
         'gas': gas_limit,
         # 'gasPrice': w3.toWei(gas_price, 'gwei'),
-        'maxFeePerGas': w3.toWei(gas_price, 'gwei'),
-        'maxPriorityFeePerGas': w3.toWei(gas_price, 'gwei'),
+        'maxFeePerGas': w3.to_wei(gas_price, 'gwei'),
+        'maxPriorityFeePerGas': w3.to_wei(gas_price, 'gwei'),
         'chainId': chainId,
         
     }
     try:
-        signed_tx = w3.eth.account.signTransaction(params, private_key=private_key)
-        txn = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
+        signed_tx = w3.eth.account.sign_transaction(params, private_key=private_key)
+        txn = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
         return {'status': 'succeed', 'txn_hash': w3.toHex(txn), 'task': 'Transfer ETH'}
     except Exception as e:
         return {'status': 'failed', 'error': e, 'task': 'Transfer ETH'}

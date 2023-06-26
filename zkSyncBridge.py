@@ -19,14 +19,14 @@ def get_w3_by_network(network='goerli'):
 
 # bridge eth from goerli to zkSync 2.0 testnet
 def bridge_zkSync_eth(w3, from_address, private_key, contract_address, amount_in_ether, chainId):
-    from_address = Web3.toChecksumAddress(from_address)
-    contract_address = Web3.toChecksumAddress(contract_address)
+    from_address = Web3.to_checksum_address(from_address)
+    contract_address = Web3.to_checksum_address(contract_address)
 
     # Deposit ETH ABI
     ABI = '[{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"address","name":"_zkSyncAddress","type":"address"},{"internalType":"enum Operations.QueueType","name":"_queueType","type":"uint8"},{"internalType":"enum Operations.OpTree","name":"_opTree","type":"uint8"}],"name":"depositETH","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"emergencyFreezeDiamond","outputs":[],"stateMutability":"nonpayable","type":"function"}]'
 
     amount_in_wei = w3.toWei(amount_in_ether, 'ether')
-    nonce = w3.eth.getTransactionCount(from_address)
+    nonce = w3.eth.get_transaction_count(from_address)
 
     # goerli链：无须设置 gas, gas price , chainId, 会自动计算并配置为 EIP 1559 类型
     tx_params = {
